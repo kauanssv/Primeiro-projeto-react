@@ -1,0 +1,11 @@
+.social_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-right: 1em;
+}
+.icons_list{
+    margin-right: 1em;
+    color: rgb(219, 157, 22);
+}

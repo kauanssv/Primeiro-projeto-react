@@ -1,18 +1,23 @@
-import './App.css';
-import HelloWorld from './components/HelloWorld';
-import OutraLista from './components/OutraLista';
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Home from "./components/pages/Home";
+import Contato from "./components/pages/Contato";
+import Empresa from "./components/pages/Empresa";
+import NavBar from "./components/NavBar";
+import Footer from "./components/layout/Footer";
+
 function App() {
 
-  const meusItens = ['React', 'Vue', 'Angular']
-
   return (
-    <div className="App">
-      <HelloWorld/>
-      <h2>Redenrização de listas</h2>
-      <OutraLista itens={meusItens}/>
-      <OutraLista itens={[]}/>
-    </div>
-  );
+    <Router>
+      <NavBar/>
+      <Routes>
+        <Route exact path="/" element={<Home/>}/>
+        <Route path="/empresa" element={<Empresa/>}/>
+        <Route path="/contato" element={<Contato/>}/>
+      </Routes>
+      <Footer/>
+    </Router>
+  )
 }
 
 export default App;
